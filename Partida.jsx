@@ -7,8 +7,7 @@ import InfoBarcos from "./InfoBarcos";
 import InfoDisparos from "./InfoDisparos";
 import Leyenda from "./Leyenda";
 import ModalFinDelJuego from "./ModalFinDelJuego";
-import ReiniciarPartida from "./ReiniciarPartida";
-import SeleccionarDificultad from "./SeleccionarDificultad";
+import Navegacion from "./Navegacion";
 
 export default function Partida({ dificultad }) {
     const generador = new GeneradorPartida(dificultad);
@@ -17,7 +16,7 @@ export default function Partida({ dificultad }) {
     const [barcos, setBarcos] = useImmer(generador.barcos); // Barcos
 
     const [coordenadasJugadas, setCoordenadasJugadas] = useImmer([]); // Coordenadas jugadas
-    const [ultimoBarcoHundido, setUltimoBarcoHundido] = useState(null);
+    const [ultimoBarcoHundido, setUltimoBarcoHundido] = useState(null); // Último barco hundido
     const finDelJuego = isFinDelJuego(); // Derived state (computed from others states)
 
     function isBarcoHundido(barco) {
@@ -111,8 +110,7 @@ export default function Partida({ dificultad }) {
                 </div>
             </main>
             {/* Fin flex */}
-            <SeleccionarDificultad />
-            <ReiniciarPartida reiniciarPartida={reiniciarPartida} />
+            <Navegacion reiniciarPartida={reiniciarPartida} />
         </>
     );
 }

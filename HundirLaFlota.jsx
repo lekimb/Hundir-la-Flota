@@ -7,7 +7,7 @@ export default function HundirLaFlota() {
     const [dificultad, setDificultad] = useState(null);
 
     return (
-        <div class="tracking-wide font-lexend">
+        <div className="tracking-wide font-lexend">
             <h1 className="text-center text-4xl text-blue-950 font-bold mt-10 mb-5">
                 Hundir la flota
             </h1>
@@ -17,9 +17,7 @@ export default function HundirLaFlota() {
                     setDificultad={setDificultad}
                 />
             ) : (
-                <div className="relative">
-                    <Partida dificultad={dificultad} />
-                </div>
+                <Partida dificultad={dificultad} />
             )}
         </div>
     );

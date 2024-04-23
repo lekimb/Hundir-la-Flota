@@ -53,20 +53,12 @@ export default function InfoBarcos({
         setTimeout(() => setUltimoBarcoHundido(null), 750);
     }, [ultimoBarcoHundido]);
 
-    useEffect(() => {
-        // Log
-        if (ultimoBarcoHundido) {
-            console.log("Barcos a flote: ");
-            console.log(barcosAFlote());
-        }
-    }, [ultimoBarcoHundido]);
-
     return (
         <section>
             <p className="mb-5 text-blue-950 text-2xl font-bold tracking-wide text-center">
                 Barcos restantes
             </p>
-            <ul className="grid grid-cols-4 gap-2">
+            <ul className="grid grid-cols-4 md:gap-2 gap-1">
                 {barcosAFloteInfo().map((barco, index) => {
                     let resaltado;
                     if (ultimoBarcoHundido) {
@@ -80,9 +72,9 @@ export default function InfoBarcos({
                     return (
                         <li
                             key={index}
-                            className={`bg-white w-32 text-center border-4 rounded-lg mb-5 px-5 py-2`}
+                            className={`bg-white md:w-32 text-center border-4 rounded-lg mb-5 md:px-5 px-2 py-2`}
                         >
-                            <div className={`text-lg text-slate-500`}>
+                            <div className={`md:text-lg text-sm text-slate-500`}>
                                 {barco.tipo}
                             </div>
                             <div

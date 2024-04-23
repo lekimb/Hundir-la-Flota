@@ -45,15 +45,15 @@ export default function Menu({ setPartidaIniciada, setDificultad }) {
             <h2 className="my-10 text-center text-2xl text-slate-500">
                 Elige la dificultad
             </h2>
-            <section className="flex justify-center gap-5">
+            <section className="flex md:flex-row flex-col justify-center items-center gap-5">
                 {tarjetas.map((tarjeta, index) => {
                     return (
                         <div
                             key={index}
-                            className="border-4 border-blue-950 rounded-xl hover:cursor-pointer hover:-translate-y-2 transition-all"
+                            className="border-4 w-52 border-blue-950 rounded-xl hover:cursor-pointer hover:-translate-y-2 transition-all"
                             onClick={() => iniciarPartida(index + 1)}
                         >
-                            <button className="py-3 bg-blue-950 text-white font-bold block w-52 text-lg tracking-wide">
+                            <button className="py-3 bg-blue-950 text-white font-bold block w-full text-lg tracking-wide">
                                 {tarjeta.dificultad}
                             </button>
                             <div className="bg-blue-950">
