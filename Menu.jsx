@@ -42,18 +42,18 @@ export default function Menu({ setPartidaIniciada, setDificultad }) {
 
     return (
         <>
-            <h2 className="my-10 text-center text-2xl text-slate-500">
+            <h2 className="my-10 text-center text-3xl text-slate-500">
                 Elige la dificultad
             </h2>
-            <section className="flex md:flex-row flex-col justify-center items-center gap-5">
+            <section className="flex gap-2 px-2 sm:flex-row flex-col justify-around items-center max-w-4xl mx-auto">
                 {tarjetas.map((tarjeta, index) => {
                     return (
                         <div
                             key={index}
-                            className="border-4 w-52 border-blue-950 rounded-xl hover:cursor-pointer hover:-translate-y-2 transition-all"
+                            className="border-4 grow max-w-[260px] sm:w-auto w-64  border-blue-950 rounded-xl hover:cursor-pointer hover:-translate-y-2 transition-all"
                             onClick={() => iniciarPartida(index + 1)}
                         >
-                            <button className="py-3 bg-blue-950 text-white font-bold block w-full text-lg tracking-wide">
+                            <button className="py-3 bg-blue-950 text-white font-bold block w-full text-xl tracking-wider">
                                 {tarjeta.dificultad}
                             </button>
                             <div className="bg-blue-950">
@@ -61,7 +61,7 @@ export default function Menu({ setPartidaIniciada, setDificultad }) {
                                     {tarjeta.info.map((item, index) => {
                                         return (
                                             <div key={index}>
-                                                <p className="text-slate-500 leading-relaxed">
+                                                <p className="text-slate-500 text-lg leading-relaxed">
                                                     {item}
                                                 </p>
                                                 {index === 1 ? (

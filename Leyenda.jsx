@@ -1,12 +1,19 @@
 export default function Leyenda() {
+    const leyenda = [
+        { color: "bg-blue-300", representa: "Agua" },
+        { color: "bg-orange-300", representa: "Tocado" },
+        { color: "bg-red-400", representa: "Hundido" },
+    ];
     return (
-        <div className="flex gap-2 w-fit mt-5 mb-20">
-            <div className="size-4 bg-blue-300"></div>
-            <div className="text-slate-500 text-sm">Agua</div>
-            <div className="size-4 bg-orange-300"></div>
-            <div className="text-slate-500 text-sm">Tocado</div>
-            <div className="size-4 bg-red-400"></div>
-            <div className="text-slate-500 text-sm">Hundido</div>
-        </div>
+        <ul className="flex gap-4 w-fit mt-5 mb-20 items-center">
+            {leyenda.map((item, index) => {
+                return (
+                    <li key={index} className="text-slate-500 flex gap-2">
+                        <span className={` size-5 ${item.color}`}></span>
+                        {item.representa}
+                    </li>
+                );
+            })}
+        </ul>
     );
 }

@@ -55,10 +55,10 @@ export default function InfoBarcos({
 
     return (
         <section>
-            <p className="mb-5 text-blue-950 text-2xl font-bold tracking-wide text-center">
+            <h2 className="mb-5 text-blue-950 text-3xl font-bold tracking-wide text-center">
                 Barcos restantes
-            </p>
-            <ul className="grid grid-cols-4 md:gap-2 gap-1">
+            </h2>
+            <ul className="grid grid-cols-4 sm:gap-2 gap-1 px-1">
                 {barcosAFloteInfo().map((barco, index) => {
                     let resaltado;
                     if (ultimoBarcoHundido) {
@@ -72,13 +72,13 @@ export default function InfoBarcos({
                     return (
                         <li
                             key={index}
-                            className={`bg-white md:w-32 text-center border-4 rounded-lg mb-5 md:px-5 px-2 py-2`}
+                            className={`bg-white sm:w-32 text-center border-4 rounded-lg mb-5 sm:px-5 px-2 pt-2 sm:pb-2 pb-1`}
                         >
-                            <div className={`md:text-lg text-sm text-slate-500`}>
+                            <div className={`sm:text-lg text-xs text-slate-500`}>
                                 {barco.tipo}
                             </div>
                             <div
-                                className={`text-4xl font-bold ${
+                                className={`sm:text-4xl text-2xl font-bold ${
                                     resaltado ? "text-red-400" : "text-blue-950"
                                 }`}
                             >

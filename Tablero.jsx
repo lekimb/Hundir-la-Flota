@@ -103,7 +103,7 @@ export default function Tablero({
                             key={indexColumna + "" + indexFila}
                             className={`${bgColor} ${
                                 finDelJuego ? "" : "hover:cursor-pointer"
-                            } size-10 flex justify-center items-center`}
+                            } sm:size-12 size-10 flex justify-center items-center`}
                             onClick={() => handleClick(coordenada)}
                         ></div>
                     );
