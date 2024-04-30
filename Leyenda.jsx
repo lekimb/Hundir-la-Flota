@@ -5,10 +5,10 @@ export default function Leyenda() {
         { color: "bg-red-400", representa: "Hundido" },
     ];
     return (
-        <ul className="flex gap-4 w-fit mt-5 mb-20 items-center">
+        <ul className="flex gap-4 w-fit mt-5  items-center">
             {leyenda.map((item, index) => {
                 return (
-                    <li key={index} className="text-slate-500 flex gap-2">
+                    <li key={index} className="text-slate-500 flex gap-2 text-base">
                         <span className={` size-5 ${item.color}`}></span>
                         {item.representa}
                     </li>

@@ -42,10 +42,10 @@ export default function Menu({ setPartidaIniciada, setDificultad }) {
 
     return (
         <>
-            <h2 className="my-10 text-center text-3xl text-slate-500">
+            <h2 className="text-center sm:text-3xl text-2xl text-slate-500 sm:mt-10 mt-6">
                 Elige la dificultad
             </h2>
-            <section className="flex gap-2 px-2 sm:flex-row flex-col justify-around items-center max-w-4xl mx-auto">
+            <section className="flex gap-2 px-2 sm:flex-row flex-col justify-around items-center max-w-4xl mx-auto mt-10">
                 {tarjetas.map((tarjeta, index) => {
                     return (
                         <div

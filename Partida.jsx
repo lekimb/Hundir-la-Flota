@@ -3,7 +3,7 @@ import { useImmer } from "use-immer";
 import { GeneradorPartida } from "./GeneradorPartida";
 
 import Tablero from "./Tablero";
-import InfoBarcos from "./InfoBarcos";
+import InfoBarcosDesktop from "./InfoBarcosDesktop";
 import InfoDisparos from "./InfoDisparos";
 import Leyenda from "./Leyenda";
 import ModalFinDelJuego from "./ModalFinDelJuego";
@@ -75,16 +75,16 @@ export default function Partida({ dificultad }) {
         <>
             <main className="flex justify-center">
                 <div className="relative bg-yellow-10">
-                    <InfoBarcos
+                    <InfoBarcosDesktop
                         barcos={barcos}
                         isBarcoHundido={isBarcoHundido}
                         ultimoBarcoHundido={ultimoBarcoHundido}
                         setUltimoBarcoHundido={setUltimoBarcoHundido}
                     />
-                    <div className="w-fit mx-auto bg-yellow-20">
+                    <div className="w-fit mx-auto">
                         <InfoDisparos disparos={disparos} />
                         <div
-                            className={`grid ${generador.generarGrid()} gap-2 relative w-fit mx-auto`}
+                            className={`grid ${generador.generarGrid()} gap-2 relative w-fit mx-auto mt-3`}
                         >
                             <Tablero
                                 tablero={tablero}

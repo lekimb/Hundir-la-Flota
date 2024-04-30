@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function InfoBarcos({
+export default function InfoBarcosDesktop({
     barcos,
     isBarcoHundido,
     ultimoBarcoHundido,
@@ -50,15 +50,17 @@ export default function InfoBarcos({
     }
 
     useEffect(() => {
-        setTimeout(() => setUltimoBarcoHundido(null), 750);
+        if (ultimoBarcoHundido) {
+            setTimeout(() => setUltimoBarcoHundido(null), 750);
+        }
     }, [ultimoBarcoHundido]);
 
     return (
-        <section>
-            <h2 className="mb-5 text-blue-950 text-3xl font-bold tracking-wide text-center">
+        <section className="sm:block hidden">
+            <h2 className="text-blue-950 text-3xl font-bold tracking-wide text-center mt-5">
                 Barcos restantes
             </h2>
-            <ul className="grid grid-cols-4 sm:gap-2 gap-1 px-1">
+            <ul className="grid grid-cols-4 gap-2 mt-5">
                 {barcosAFloteInfo().map((barco, index) => {
                     let resaltado;
                     if (ultimoBarcoHundido) {
@@ -72,13 +74,13 @@ export default function InfoBarcos({
                     return (
                         <li
                             key={index}
-                            className={`bg-white sm:w-32 text-center border-4 rounded-lg mb-5 sm:px-5 px-2 pt-2 sm:pb-2 pb-1`}
+                            className={`bg-white w-32 text-center border-4 rounded-lg px-5 py-2`}
                         >
-                            <div className={`sm:text-lg text-xs text-slate-500`}>
+                            <div className={`text-lg text-slate-500`}>
                                 {barco.tipo}
                             </div>
                             <div
-                                className={`sm:text-4xl text-2xl font-bold ${
+                                className={`text-4xl font-bold ${
                                     resaltado ? "text-red-400" : "text-blue-950"
                                 }`}
                             >

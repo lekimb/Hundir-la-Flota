@@ -8,7 +8,7 @@ export default function HundirLaFlota() {
 
     return (
         <div className="tracking-wider font-ubuntu">
-            <h1 className="text-center text-5xl text-blue-950 font-bold mt-10 mb-5">
+            <h1 className="text-center sm:text-5xl text-4xl text-blue-950 font-bold mt-10">
                 Hundir la flota
             </h1>
             {!partidaIniciada ? (
